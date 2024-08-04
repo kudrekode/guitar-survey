@@ -1,0 +1,4 @@
+Flask==3.0.3
+ortools==9.8.3296
+numpy==1.26.3
+pandas==2.2.0

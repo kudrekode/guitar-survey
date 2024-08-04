@@ -463,8 +463,9 @@ def generate_new_fingering_endpoint():
     print("Error: No feasible fingering found")
     return jsonify({"error": "No feasible fingering found"}), 500
 
-
-
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    from os import environ
+    from waitress import serve
+
+    port = int(environ.get("PORT", 5000))
+    serve(app, host="0.0.0.0", port=port)

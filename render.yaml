@@ -1,10 +1,7 @@
 services:
   - type: web
-    name: my-flask-app
+    name: your-flask-app
     env: python
     plan: free
-    buildCommand: ""
-    startCommand: gunicorn app:app
-    envVars:
-      - key: FLASK_ENV
-        value: production
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
